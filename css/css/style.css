@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aqua;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.login-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px dashed rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    
+}
+label{
+    font-weight: bold;
+}
+button{
+    padding: 5px;
+    border-radius: 5px;
+    color:aquamarine;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    cursor: pointer;
+
+}
