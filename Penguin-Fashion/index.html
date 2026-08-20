@@ -1,114 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Fashion - Be The Penguins Of Winter</title>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Penguin Fashion</title>
+
 </head>
 
-<body class="bg-gray-100 w-full h-screen">
-    <main class=" bg-orange-100">
-        <!-- navbar -->
-        <nav class=" p-4 flex justify-between items-center">
-            <div>
-                <p class="font-bold text-xl">Penguin Fashion</p>
+<body class="bg-slate-50 selection:bg-amber-400 selection:text-slate-900">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 border-b border-amber-100/50 backdrop-blur-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div
+                    class="bg-amber-400 p-2.5 rounded-2xl group-hover:rotate-12 transition-transform duration-300 shadow-md">
+
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-bebas text-3xl font-bold tracking-wider text-slate-800 leading-none">PENGUIN</span>
+                    <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">FASHION</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-700">
+                <a href="#" class="text-amber-500 font-semibold transition-colors">Home</a>
+                <a href="#women-jackets" class="hover:text-amber-500 transition-colors">Women Collection</a>
+                <a href="#men-jackets" class="hover:text-amber-500 transition-colors">Men Collection</a>
+                <a href="#features" class="hover:text-amber-500 transition-colors">Why Us</a>
+                <a href="#contact" class="hover:text-amber-500 transition-colors">Contact</a>
             </div>
 
-            <div class="space-x-4">
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
         </nav>
 
-        <!-- hero section -->
-        <section class=" flex justify-between max-w-11/12 mx-auto items-center space-y-4 mt-10">
+    </header>
 
-            <div class="space-y-4">
-                <h2 class="text-5xl font-bold flex flex-col uppercase">Be the Penguins <span class="text-pink-500">of
-                        Winter</span>
-                </h2>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-                <p>Lorem Ipsum is simply dummy text of the printing
-                    and typesetting industry.</p>
+                    <!-- Left Content -->
+                    <div class="space-y-6 text-center lg:text-left z-10">
+                        <div
+                            class="inline-flex items-center space-x-2 bg-amber-200/60 border border-amber-300 text-amber-900 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-xs">
+                            <i class="fa-solid fa-snowflake text-amber-600"></i>
+                            <span>Winter Collection 2026</span>
+                        </div>
 
-                <button class="bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-md">BUY
-                    NOW</button>
-            </div>
+                        <h1
+                            class="font-bebas text-6xl sm:text-7xl lg:text-8xl font-bold uppercase tracking-wide leading-none text-slate-900">
+                            BE THE PENGUINS <br>
+                            <span class="text-amber-500 drop-shadow-xs">OF WINTER</span>
+                        </h1>
 
-            <div class=" justify-center items-center ">
-                <img class="w-3/4" src="/image/lady.png" alt="model">
+                        <p class="text-slate-600 max-w-lg mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed">
+                            Discover ultimate warmth without sacrificing elegance. Premium crafted winter apparel
+                            designed for snow-bound adventures and city style.
+                        </p>
+
+                        <div
+                            class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                            <button
+                                class="buy-now-btn w-full sm:w-auto bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-amber-400/20 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3 cursor-pointer">
+                                <i class="fa-solid fa-cart-shopping text-lg"></i>
+                                <span class="tracking-wide">BUY NOW</span>
+                            </button>
+
+                            <a href="#women-jackets"
+                                class="w-full sm:w-auto text-center px-6 py-4 rounded-2xl border-2 border-slate-300 text-slate-700 font-semibold hover:border-slate-800 hover:text-slate-900 transition-all">
+                                Explore Catalogue
+                            </a>
+                        </div>
+
+                        <!-- Stats / Social Proof -->
+                        <div class="pt-8 grid grid-cols-3 gap-4 border-t border-amber-200/80 max-w-md mx-auto lg:mx-0">
+                            <div>
+                                <p class="font-bebas text-3xl font-bold text-slate-900">15K+</p>
+                                <p class="text-xs text-slate-500 font-medium">Happy Clients</p>
+                            </div>
+                            <div>
+                                <p class="font-bebas text-3xl font-bold text-slate-900">100%</p>
+                                <p class="text-xs text-slate-500 font-medium">Premium Leather</p>
+                            </div>
+                            <div>
+                                <p class="font-bebas text-3xl font-bold text-slate-900">4.9 <i
+                                        class="fa-solid fa-star text-amber-500 text-xs"></i></p>
+                                <p class="text-xs text-slate-500 font-medium">Rating Score</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Image Showcase -->
+                    <div class="relative flex justify-center items-center">
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute top-4 right-4 sm:top-10 sm:right-10 bg-slate-900 text-amber-400 p-4 rounded-2xl shadow-xl transform rotate-6 animate-bounce border border-slate-700 z-20 hidden sm:block">
+                            <p class="text-xs uppercase font-bold tracking-widest text-slate-400">Special Discount</p>
+                            <p class="font-bebas text-3xl font-bold leading-none">30% OFF</p>
+                        </div>
+
+                        <!-- Hero Model Image -->
+                        <img src="image/lady.png" alt="Penguin Fashion Winter Model"
+                            class="w-full max-w-md lg:max-w-lg object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                </div>
             </div>
         </section>
 
+        <!-- Women Jackets Section -->
+        <section id="women-jackets" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 border-b border-slate-200 pb-4">
+                <div>
+                    <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Trending Now</span>
+                    <h2 class="font-bebas text-4xl sm:text-5xl font-bold text-slate-900 tracking-wide uppercase">WOMEN
+                        JACKET</h2>
+                </div>
+                <p class="text-slate-500 text-sm max-w-xs mt-2 sm:mt-0">Elegantly tailored outerwear built for severe
+                    winter chills.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Jacket Card 1 -->
+                <div
+                    class="group bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
+                    <div
+                        class="bg-slate-100/80 rounded-2xl p-6 flex justify-center items-center relative overflow-hidden h-72">
+                        <span
+                            class="absolute top-3 left-3 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-xs">Top
+                            Seller</span>
+                        <img src="image/image 11.png" alt="Yellow Coat Jacket"
+                            class="h-56 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                    </div>
+                    <div class="pt-6 space-y-3">
+
+                        <h3 class="font-bold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">Yellow
+                            Coat Jacket</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed line-clamp-2">
+                            Insulated water-resistant winter coat featuring soft faux fur trim and deep utility pockets.
+                        </p>
+                        <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+                            <span class="font-bebas text-3xl font-bold text-amber-500">$234</span>
+                            <button
+                                class="buy-now-btn bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 flex items-center space-x-2 shadow-md cursor-pointer">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>BUY NOW</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jacket Card 2 -->
+                <div
+                    class="group bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
+                    <div
+                        class="bg-slate-100/80 rounded-2xl p-6 flex justify-center items-center relative overflow-hidden h-72">
+                        <span
+                            class="absolute top-3 left-3 bg-slate-900 text-amber-400 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-xs">New
+                            Arrival</span>
+                        <img src="image/image 15.png" alt="Ladies Winter Coat"
+                            class="h-56 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                    </div>
+                    <div class="pt-6 space-y-3">
+
+                        <h3 class="font-bold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">Ladies
+                            Winter Coat</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed line-clamp-2">
+                            Lightweight windbreaker coat crafted with recycled thermal insulation for maximum warmth.
+                        </p>
+                        <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+                            <span class="font-bebas text-3xl font-bold text-amber-500">$280</span>
+                            <button
+                                class="buy-now-btn bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 flex items-center space-x-2 shadow-md cursor-pointer">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>BUY NOW</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jacket Card 3 -->
+                <div
+                    class="group bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
+                    <div
+                        class="bg-slate-100/80 rounded-2xl p-6 flex justify-center items-center relative overflow-hidden h-72">
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-xs">20%
+                            OFF</span>
+                        <img src="image/PngItem_2597366 1.png" alt="Woman Leather Jacket"
+                            class="h-56 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                    </div>
+                    <div class="pt-6 space-y-3">
+
+                        <h3 class="font-bold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">Woman
+                            Leather Jacket</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed line-clamp-2">
+                            100% Genuine lambskin leather jacket featuring sleek asymmetric zip closure and metallic
+                            studs.
+                        </p>
+                        <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+                            <span class="font-bebas text-3xl font-bold text-amber-500">$320</span>
+                            <button
+                                class="buy-now-btn bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 flex items-center space-x-2 shadow-md cursor-pointer">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>BUY NOW</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Men Jackets Section -->
+        <section id="men-jackets" class="py-16 md:py-24 bg-slate-100/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 border-b border-slate-200 pb-4">
+                    <div>
+                        <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Rugged & Refined</span>
+                        <h2 class="font-bebas text-4xl sm:text-5xl font-bold text-slate-900 tracking-wide uppercase">MAN
+                            JACKET</h2>
+                    </div>
+                    <p class="text-slate-500 text-sm max-w-xs mt-2 sm:mt-0">Durable winter coats crafted for style and
+                        heavy weather resilience.</p>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Jacket Card 1 -->
+                    <div
+                        class="group bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between">
+                        <div
+                            class="bg-slate-100/80 rounded-2xl p-6 flex justify-center items-center relative overflow-hidden h-72">
+                            <span
+                                class="absolute top-3 left-3 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-xs">Popular</span>
+                            <img src="image/SeekPng 1.png" alt="Snowboard Jacket Mens"
+                                class="h-56 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                        </div>
+                        <div class="pt-6 space-y-3">
+
+                            <h3 class="font-bold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">
+                                Snowboard Jacket Mens</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed line-clamp-2">
+                                Alpine-grade waterproof snowboard jacket built with sealed seams and underarm
+                                ventilation vents.
+                            </p>
+                            <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+                                <span class="font-bebas text-3xl font-bold text-amber-500">$250</span>
+                                <button
+                                    class="buy-now-btn bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 flex items-center space-x-2 shadow-md cursor-pointer">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>BUY NOW</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jacket Card 2 -->
+                    <div
+                        class="group bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between">
+                        <div
+                            class="bg-slate-100/80 rounded-2xl p-6 flex justify-center items-center relative overflow-hidden h-72">
+                            <span
+                                class="absolute top-3 left-3 bg-slate-900 text-amber-400 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-xs">Classic</span>
+                            <img src="image/toppng 1.png" alt="Leather Jacket"
+                                class="h-56 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                        </div>
+                        <div class="pt-6 space-y-3">
+
+                            <h3 class="font-bold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">
+                                Leather Jacket Casual</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed line-clamp-2">
+                                Heavy-duty distressed brown biker leather jacket with quilted shoulder padding and inner
+                                fleece lining.
+                            </p>
+                            <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+                                <span class="font-bebas text-3xl font-bold text-amber-500">$290</span>
+                                <button
+                                    class="buy-now-btn bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 flex items-center space-x-2 shadow-md cursor-pointer">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>BUY NOW</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jacket Card 3 -->
+                    <div
+                        class="group bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between">
+                        <div
+                            class="bg-slate-100/80 rounded-2xl p-6 flex justify-center items-center relative overflow-hidden h-72">
+                            <span
+                                class="absolute top-3 left-3 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-xs">Best
+                                Value</span>
+                            <img src="image/vippng 1.png" alt="Casual Winter Jacket"
+                                class="h-56 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                        </div>
+                        <div class="pt-6 space-y-3">
+
+                            <h3 class="font-bold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">
+                                Casual Winter Jacket</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed line-clamp-2">
+                                Versatile Everyday bomber jacket with ribbed cuffs, high neck zip collar, and internal
+                                phone pocket.
+                            </p>
+                            <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+                                <span class="font-bebas text-3xl font-bold text-amber-500">$210</span>
+                                <button
+                                    class="buy-now-btn bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 flex items-center space-x-2 shadow-md cursor-pointer">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>BUY NOW</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Benefits Section -->
+        
+
+
     </main>
 
-    <!-- jacket section -->
-    <section class="max-w-9/12 mx-auto items-center space-y-4 mt-10">
-        <h2>Penguin Fashion</h2>
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <!-- jacket -->
-             
-            <div class="bg-white p-4 rounded-lg shadow-md">
-
-                <div class="rounded-lg w-full flex justify-center">
-                    <!-- image -->
-                    <img class="object-contain h-40 w-40" src="/image/image 11.png" alt="jacket">
+                <!-- Brand Info -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-amber-400 p-2 rounded-xl text-slate-900">
+                            <i class="fa-solid fa-feather-pointed text-lg"></i>
+                        </div>
+                        <span class="font-bebas text-3xl font-bold tracking-wider text-white">PENGUIN FASHION</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Bringing warmth, comfort, and unmatched winter style to fashion enthusiasts worldwide since
+                        2021.
+                    </p>
+                    <div class="flex space-x-4 text-lg">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-amber-400 hover:text-slate-900 transition-colors"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-amber-400 hover:text-slate-900 transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-amber-400 hover:text-slate-900 transition-colors"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-amber-400 hover:text-slate-900 transition-colors"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
 
-                <div class="mt-4">
-                    <!-- jacket title -->
-                    <h2 class="font-bold">Jacket</h2>
-
-                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, repellat.</p>
-
-                    <button class="mt-4 bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-md">BUY
-                        NOW</button>
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="font-bold text-white text-base mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-amber-400 transition-colors">Home</a></li>
+                        <li><a href="#women-jackets" class="hover:text-amber-400 transition-colors">Women Collection</a>
+                        </li>
+                        <li><a href="#men-jackets" class="hover:text-amber-400 transition-colors">Men Collection</a>
+                        </li>
+                        <li><a href="#features" class="hover:text-amber-400 transition-colors">Why Choose Us</a></li>
+                    </ul>
                 </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="font-bold text-white text-base mb-4 uppercase tracking-wider">Customer Care</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-amber-400 transition-colors">Size Guide & Fitting</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors">Shipping & Delivery</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors">Return Policy</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors">Privacy & Terms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-white text-base mb-4 uppercase tracking-wider">Contact Us</h4>
+                    <p class="text-sm flex items-center space-x-3"><i
+                            class="fa-solid fa-location-dot text-amber-400"></i> <span>123 Winter Park Ave, NY
+                            10001</span></p>
+                    <p class="text-sm flex items-center space-x-3"><i class="fa-solid fa-envelope text-amber-400"></i>
+                        <span>support@penguinfashion.com</span></p>
+                    <p class="text-sm flex items-center space-x-3"><i class="fa-solid fa-phone text-amber-400"></i>
+                        <span>+1 (800) 555-PENGUIN</span></p>
+                </div>
+
             </div>
-             
-            <div class="bg-white p-4 rounded-lg shadow-md">
 
-                <div class="rounded-lg w-full flex justify-center">
-                    <!-- image -->
-                    <img class="object-contain h-40 w-40" src="/image/image 11.png" alt="jacket">
-                </div>
-
-                <div class="mt-4">
-                    <!-- jacket title -->
-                    <h2 class="font-bold">Jacket</h2>
-
-                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, repellat.</p>
-
-                    <button class="mt-4 bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-md">BUY
-                        NOW</button>
-                </div>
+            <!-- Copyright -->
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Penguin Fashion. All rights reserved. Designed for elegance & durability.</p>
             </div>
-             
-            <div class="bg-white p-4 rounded-lg shadow-md">
-
-                <div class="rounded-lg w-full flex justify-center">
-                    <!-- image -->
-                    <img class="object-contain h-40 w-40" src="/image/image 11.png" alt="jacket">
-                </div>
-
-                <div class="mt-4">
-                    <!-- jacket title -->
-                    <h2 class="font-bold">Jacket</h2>
-
-                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, repellat.</p>
-
-                    <button class="mt-4 bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-md">BUY
-                        NOW</button>
-                </div>
-            </div>
-
         </div>
-    </section>
+    </footer>
 
 </body>
 
