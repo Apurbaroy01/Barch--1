@@ -1,234 +1,516 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary Hardy | Web Developer & Software Engineer</title>
+    <meta name="description" content="Portfolio of Mary Hardy, a passionate Web Developer with 10+ years of experience in JavaScript, React, Node.js, and MongoDB." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FD6E0A 0%, #FF4500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #FD6E0A 0%, #E05300 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gradient-btn:hover {
+            background: linear-gradient(135deg, #E05300 0%, #C44300 100%);
+            box-shadow: 0 10px 25px -5px rgba(253, 110, 10, 0.4);
+            transform: translateY(-2px);
+        }
+        .glass-nav {
+            background: rgba(255, 248, 243, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 80% 20%, rgba(253, 110, 10, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 10% 80%, rgba(255, 107, 74, 0.08) 0%, transparent 35%);
+        }
+    </style>
 </head>
 
-<body class="w-full bg-gray-100">
+<body class="w-full bg-[#FFF8F3] text-gray-800 antialiased selection:bg-orange-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-orange-100/60 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="text-3xl font-extrabold tracking-tight font-heading text-gray-900 group">
+                Ma<span class="text-[#FD6E0A] transition-transform inline-block group-hover:rotate-12 duration-300">r</span>y
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm font-semibold text-gray-600 hover:text-[#FD6E0A] transition-colors">About</a>
+                <a href="#what-i-do" class="text-sm font-semibold text-gray-600 hover:text-[#FD6E0A] transition-colors">Services</a>
+                <a href="#resume" class="text-sm font-semibold text-gray-600 hover:text-[#FD6E0A] transition-colors">Resume</a>
+                <a href="#contact" class="text-sm font-semibold text-gray-600 hover:text-[#FD6E0A] transition-colors">Contact</a>
+                <a href="#contact" class="gradient-btn text-white px-6 py-2.5 rounded-xl font-semibold text-sm shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i> Hire Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggler Button -->
+            <button id="mobile-menu-btn" aria-label="Toggle menu" class="md:hidden text-gray-700 hover:text-[#FD6E0A] p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-orange-100 px-6 py-4 space-y-3 backdrop-blur-md">
+            <a href="#about" class="block text-gray-700 hover:text-[#FD6E0A] font-medium py-1">About</a>
+            <a href="#what-i-do" class="block text-gray-700 hover:text-[#FD6E0A] font-medium py-1">Services</a>
+            <a href="#resume" class="block text-gray-700 hover:text-[#FD6E0A] font-medium py-1">Resume</a>
+            <a href="#contact" class="block text-gray-700 hover:text-[#FD6E0A] font-medium py-1">Contact</a>
+            <a href="#contact" class="block gradient-btn text-white text-center py-2.5 rounded-xl font-semibold mt-2">Hire Me</a>
+        </div>
+    </header>
+
     <main class="w-full">
-        <!-- navbar -->
-        <nav>
-            <ul
-                class="flex gap-4 justify-between bg-transparent max-w-7xl mx-auto px-30 py-4  border-pink-200  items-center ">
-                <div>
-                    <p class="text-2xl font-semibold">
-                        <a href="/">Ma<span class="text-red-500">r</span>y</a>
+        <!-- Hero Section -->
+        <section class="relative hero-bg py-12 sm:py-20 lg:py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content Column -->
+                <div class="space-y-6 text-center lg:text-left z-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/80 border border-orange-200/60 text-[#FD6E0A] font-semibold text-sm shadow-sm">
+                        <i class="fa-solid fa-hand-wave text-orange-500 animate-bounce"></i> Hi, I'm Mary
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                        Mary <span class="gradient-text">Hardy</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Full-Stack Web Developer with over 10 years of experience building modern, accessible, and high-performance digital products for clients worldwide.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#contact" class="gradient-btn text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-orange-500/20 inline-flex items-center gap-2">
+                            <i class="fa-solid fa-briefcase"></i> Hire Me
+                        </a>
+                        <a href="#resume" class="bg-white hover:bg-orange-50 text-[#FD6E0A] border-2 border-[#FD6E0A] px-7 py-3.5 rounded-xl font-semibold transition-all duration-300 inline-flex items-center gap-2 hover:shadow-md">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                    </div>
+
+                    <!-- Key Stats Counter -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-orange-200/60 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-heading">10+</p>
+                            <p class="text-xs sm:text-sm text-gray-500">Years Experience</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-heading">120+</p>
+                            <p class="text-xs sm:text-sm text-gray-500">Projects Done</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-heading">50+</p>
+                            <p class="text-xs sm:text-sm text-gray-500">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Column -->
+                <div class="relative flex justify-center items-center lg:justify-end">
+                    <!-- Background Decorative Shapes -->
+                    <div class="absolute -z-10 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-orange-300 to-amber-200 blur-2xl opacity-40"></div>
+                    
+                    <div class="relative max-w-sm sm:max-w-md lg:max-w-lg">
+                        <div class="rounded-3xl p-3 bg-white/60 shadow-2xl backdrop-blur-sm border border-white">
+                            <img src="aset/man.png" alt="Mary Hardy" class="w-full h-auto rounded-2xl object-cover transform hover:scale-[1.02] transition-transform duration-500">
+                        </div>
+
+                        <!-- Floating Badge 1 -->
+                        <div class="absolute -bottom-4 -left-4 sm:left-2 bg-white/90 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-xl border border-orange-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-orange-100 text-[#FD6E0A] flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-400">Specialty</p>
+                                <p class="text-sm font-bold text-gray-800">Full-Stack Dev</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 -->
+                        <div class="absolute -top-4 -right-4 sm:right-2 bg-white/90 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-xl border border-orange-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-400">Status</p>
+                                <p class="text-sm font-bold text-gray-800">Available for Hire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-6 sm:p-12 shadow-xl shadow-orange-950/5 border border-orange-100/80 space-y-10">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight font-heading">
+                        About <span class="gradient-text">Me</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-[#FD6E0A] mx-auto rounded-full"></div>
+                    <p class="text-gray-600 text-base sm:text-lg leading-relaxed pt-2">
+                        I am a passionate software engineer with a strong foundation in modern web architectures, intuitive user interface design, and resilient backend systems. I thrive on turning complex problems into elegant, simple solutions.
                     </p>
                 </div>
 
-                <div class="flex gap-4 items-center">
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <p class="bg-pink-300 p-2 rounded-lg"><a href="#">Hire Me</a></p>
-                </div>
-            </ul>
-        </nav>
-
-        <!-- hero section -->
-        <section class="flex bg-inherit h-90 items-center justify-center px-30 gap-10 max-w-7xl mx-auto">
-            <div class="space-y-6 relative">
-                <p class="text-2xl">Hi, I'm Mary</p>
-                <h2 class="font-semibold text-6xl">Mary Hardy</h2>
-                <p>I'm a Web Developer Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br> Tenetur ex iusto
-                    provident praesentium, laboriosam ut.</p>
-
-                <div class="flex gap-4">
-                    <buttom class="bg-orange-400 text-white p-2 rounded-md">Hire Me</buttom>
-                    <buttom class="bg-white border border-orange-400 p-2 text-orange-400 rounded-md">Download CV
-                    </buttom>
-                </div>
-
-                <div class="-rotate-90 absolute right-80 bottom-35 flex gap-2 items-center">
-                    <p class="font-semibold text-7xl tracking-[8px]">DEVELOPER</p>
-                </div>
-            </div>
-
-            <div class="flex items-end justify-end">
-                <img src="aset\man.png" class="w-1/2" alt="Mary Hardy">
-            </div>
-        </section>
-
-        <!-- about section -->
-        <section class="w-full mt-10 bg-red-100 p-20">
-            <div class="border text-center bg-white p-4 space-y-5">
-                <div>
-                    <h2 class="font-bold text-5xl">About Me</h2>
-                    <p class="mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui odio, illo saepe ea
-                        vitae porro ullam fugiat incidunt, quam eum accusamus voluptate harum nostrum veritatis enim!
-                        Perferendis commodi facilis ut.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-5">
-                    <div>
-                        <h2>Name:</h2>
-                        <p>Mary Hardy</p>
+                <!-- Info Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+                    <div class="p-5 rounded-2xl bg-[#FFF8F3] border border-orange-100 text-center hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-white rounded-xl text-[#FD6E0A] mx-auto mb-3 flex items-center justify-center shadow-sm text-xl">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Name</p>
+                        <p class="text-base font-bold text-gray-800 mt-1">Mary Hardy</p>
                     </div>
-                    <div>
-                        <h2>Email:</h2>
-                        <p>mary.hardy@example.com</p>
+
+                    <div class="p-5 rounded-2xl bg-[#FFF8F3] border border-orange-100 text-center hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-white rounded-xl text-[#FD6E0A] mx-auto mb-3 flex items-center justify-center shadow-sm text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Email</p>
+                        <p class="text-base font-bold text-gray-800 mt-1 truncate">mary.hardy@example.com</p>
                     </div>
-                    <div>
-                        <h2>Date of birth:</h2>
-                        <p>01/01/2000</p>
+
+                    <div class="p-5 rounded-2xl bg-[#FFF8F3] border border-orange-100 text-center hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-white rounded-xl text-[#FD6E0A] mx-auto mb-3 flex items-center justify-center shadow-sm text-xl">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Date of Birth</p>
+                        <p class="text-base font-bold text-gray-800 mt-1">01 Jan 2000</p>
                     </div>
-                    <div>
-                        <h2>Location:</h2>
-                        <p>New York, USA</p>
+
+                    <div class="p-5 rounded-2xl bg-[#FFF8F3] border border-orange-100 text-center hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-white rounded-xl text-[#FD6E0A] mx-auto mb-3 flex items-center justify-center shadow-sm text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Location</p>
+                        <p class="text-base font-bold text-gray-800 mt-1">New York, USA</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- What I Do -->
-        <section class="w-full mt-10 p-20">
-            <div>
-                <h2 class="text-center font-bold text-5xl">What I Do</h2>
-                <p class="text-center mt-2">I have more than 10 years experience building software for clients all over
-                    the world. Below is a quick overview of my main technical skill sets and technologies i use. Want to
-                    find out more about my experience? Check out my online resume and project portfolio..</p>
+        <!-- What I Do Section -->
+        <section id="what-i-do" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight font-heading">
+                    What <span class="gradient-text">I Do</span>
+                </h2>
+                <div class="w-16 h-1 bg-[#FD6E0A] mx-auto rounded-full"></div>
+                <p class="text-gray-600 text-base sm:text-lg leading-relaxed pt-2">
+                    I have more than 10 years of experience building scalable software solutions. Below is a quick overview of my core tech stack and skill sets.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-5 mt-10">
-
-                <div class="space-y-4 border p-4 rounded-md">
-                    <img src="/aset/download.png" class="w-1/4" alt="Vanilla JavaScript">
-                    <h2 class="text-xl font-semibold">Vanilla JavaScript</h2>
-                    <p class="text-gray-600 ">List skill/technologies here. You can change the icon above to any of the
-                        1500+ FontAwesome 5
-                        free icons available. Aenean commodo ligula eget dolor..</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-orange-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Vanilla JavaScript</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Deep expertise in ES6+ syntax, asynchronous programming, DOM manipulation, state management, and modern browser APIs.
+                    </p>
                 </div>
 
-                <div class="space-y-4 border p-4 rounded-md">
-                    <img src="/aset/download.png" class="w-1/4" alt="React">
-                    <h2 class="text-xl font-semibold">React</h2>
-                    <p>List skill/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5
-                        free icons available. Aenean commodo ligula eget dolor.</p>
+                <!-- Skill Card 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-orange-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-500 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">React JS</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Building component-driven interactive UIs using React Hooks, Context API, Redux Toolkit, Next.js, and custom hooks.
+                    </p>
                 </div>
 
-                <div class="space-y-4 border p-4 rounded-md">
-                    <img src="/aset/download.png" class="w-1/4" alt="Node.js">
-                    <h2 class="text-xl font-semibold">Node.js</h2>
-                    <p>List skill/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5
-                        free icons available. Aenean commodo ligula eget dolor.</p>
+                <!-- Skill Card 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-orange-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-node-js"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Node.js</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Architecting robust RESTful & GraphQL APIs, microservices, Express servers, websockets, and backend authentication integrations.
+                    </p>
                 </div>
 
-                <div class="space-y-4 border p-4 rounded-md">
-                    <img src="/aset/download.png" class="w-1/4" alt="MongoDB">
-                    <h2 class="text-xl font-semibold">MongoDB</h2>
-                    <p>List skill/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5
-                        free icons available. Aenean commodo ligula eget dolor.</p>
+                <!-- Skill Card 4 -->
+                <div class="bg-white rounded-2xl p-8 border border-orange-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">MongoDB</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Designing NoSQL database schemas, write-heavy data pipelines, complex aggregation pipelines, and indexing strategy.
+                    </p>
                 </div>
-
-            </div>
-        </section>
-
-
-        <!-- A summary of My Resume -->
-        <section>
-            <h2 class="text-center font-bold text-5xl m-5 ">A summary of My Resume</h2>
-
-            <div class="flex max-w-11/12 mx-auto gap-10 justify-between">
-                <!-- My Education -->
-                <div class="space-y-4">
-                    <h2 class="font-bold text-3xl">My Education</h2>
-
-                    <div class="space-y-2 border-b">
-                        <h3 class="font-bold">Master in Computer Engineering</h3>
-                        <h4>Harvard University / 2015 - 2017</h4>
-                        <p class="text-gray-600 text-xs">List skill/technologies here. You can change the icon above
-                            to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.
-                        </p>
-                    </div>
-
-
-                    <div class="space-y-2 border-b">
-                        <h3 class="font-bold">Master in Computer Engineering</h3>
-                        <h4>Harvard University / 2015 - 2017</h4>
-                        <p class="text-gray-600 text-xs">
-                            List skill/technologies here. You can change the icon above
-                            to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.
-                        </p>
-                    </div>
-
-                    <div class="space-y-2 border-b">
-                        <h3 class="font-bold">Master in Computer Engineering</h3>
-                        <h4>Harvard University / 2015 - 2017</h4>
-                        <p class="text-gray-600 text-xs">List skill/technologies here. You can change the icon above
-                            to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.
-                        </p>
-                    </div>
-
-                </div>
-
-                <!-- My Experience -->
-                <div class="space-y-2">
-                    <h2 class="font-bold text-3xl">My Experience</h2>
-                    <div class="space-y-4 border-b">
-                        <h3 class="font-bold">Master in Computer Engineering</h3>
-                        <h4>Harvard University / 2015 - 2017</h4>
-                        <p class="text-gray-600 text-xs">
-                            List skill/technologies here. You can change the icon above
-                            to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.
-                        </p>
-                    </div>
-
-                    <div class="space-y-2 border-b">
-                        <h3 class="font-bold">Master in Computer Engineering</h3>
-                        <h4>Harvard University / 2015 - 2017</h4>
-                        <p class="text-gray-600 text-xs">
-                            List skill/technologies here. You can change the icon above
-                            to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.
-                        </p>
-                    </div>
-                    <div class="space-y-2 border-b">
-                        <h3 class="font-bold">Master in Computer Engineering</h3>
-                        <h4>Harvard University / 2015 - 2017</h4>
-                        <p class="text-gray-600 text-xs">
-                            List skill/technologies here. You can change the icon above
-                            to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="flex justify-center text-center mt-10">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Download CV
-                </button>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section class="w-full mt-5 p-10 bg-[FFF8F3]">
-
-            <div class="flex justify-between gap-10 p-5 mt-10">
-
-                <div>
-                    <h2 class="r font-bold text-3xl m-5 ">Lets Connect</h2>
-                    <p class="text-xs ">Please fill out the form on this section to contact with me or call between <br>
-                        9:00 A.M and 8.00 P.M ET, Monday through Friday.</p>
+        <!-- Summary of My Resume Section -->
+        <section id="resume" class="py-16 sm:py-24 bg-white/70 border-y border-orange-100/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight font-heading">
+                        A Summary of <span class="gradient-text">My Resume</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-[#FD6E0A] mx-auto rounded-full"></div>
                 </div>
 
-                <div class=" p-4 rounded-md w-1/2">
-                    <h2 class="font-bold text-3xl m-5 ">Let’s Message me</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- My Education Timeline -->
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-3 border-b border-orange-200 pb-4">
+                            <div class="w-10 h-10 rounded-xl bg-orange-100 text-[#FD6E0A] flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 font-heading">My Education</h3>
+                        </div>
 
-                    <div class="flex flex-col gap-4  p-4">
-                        <input type="text" placeholder="Your Name" class="border p-2 rounded-md" >
-                        <input type="email" placeholder="Your Email" class="border p-2 rounded-md" >
-                        <textarea cols="10" rows="5" placeholder="Your Message" class="border p-2 rounded-md"></textarea>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Submit
-                        </button>
+                        <div class="space-y-8 relative pl-6 border-l-2 border-orange-200">
+                            <!-- Item 1 -->
+                            <div class="relative space-y-2 group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#FD6E0A] group-hover:scale-125 transition-transform"></div>
+                                <h4 class="text-xl font-bold text-gray-900">Master in Computer Engineering</h4>
+                                <p class="text-sm font-semibold text-[#FD6E0A]">Harvard University / 2015 - 2017</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Specialized in distributed systems, advanced algorithms, and software design patterns with high distinction honors.
+                                </p>
+                            </div>
 
+                            <!-- Item 2 -->
+                            <div class="relative space-y-2 group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#FD6E0A] group-hover:scale-125 transition-transform"></div>
+                                <h4 class="text-xl font-bold text-gray-900">Bachelor of Science in Computer Science</h4>
+                                <p class="text-sm font-semibold text-[#FD6E0A]">New York University / 2011 - 2015</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Focused on foundational computer science principles, web engineering, database architecture, and security.
+                                </p>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="relative space-y-2 group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#FD6E0A] group-hover:scale-125 transition-transform"></div>
+                                <h4 class="text-xl font-bold text-gray-900">High School Diploma in Science</h4>
+                                <p class="text-sm font-semibold text-[#FD6E0A]">NYC Tech Academy / 2009 - 2011</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Graduated top of class with focus on mathematics, physics, and introductory computer programming.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- My Experience Timeline -->
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-3 border-b border-orange-200 pb-4">
+                            <div class="w-10 h-10 rounded-xl bg-orange-100 text-[#FD6E0A] flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 font-heading">My Experience</h3>
+                        </div>
+
+                        <div class="space-y-8 relative pl-6 border-l-2 border-orange-200">
+                            <!-- Item 1 -->
+                            <div class="relative space-y-2 group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#FD6E0A] group-hover:scale-125 transition-transform"></div>
+                                <h4 class="text-xl font-bold text-gray-900">Senior Full-Stack Developer</h4>
+                                <p class="text-sm font-semibold text-[#FD6E0A]">Tech Global Inc. / 2020 - Present</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Leading a cross-functional engineering team building enterprise web applications serving over 500,000 active monthly users.
+                                </p>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="relative space-y-2 group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#FD6E0A] group-hover:scale-125 transition-transform"></div>
+                                <h4 class="text-xl font-bold text-gray-900">Frontend Web Engineer</h4>
+                                <p class="text-sm font-semibold text-[#FD6E0A]">Digital Solutions Ltd / 2017 - 2020</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Designed and implemented responsive user interfaces with React, improving site engagement and page load speed by 40%.
+                                </p>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="relative space-y-2 group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#FD6E0A] group-hover:scale-125 transition-transform"></div>
+                                <h4 class="text-xl font-bold text-gray-900">Junior Web Developer</h4>
+                                <p class="text-sm font-semibold text-[#FD6E0A]">Creative Agency / 2015 - 2017</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Developed custom HTML5/CSS3/JavaScript websites for client brands, ensuring cross-browser compatibility and accessibility.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download CV Action -->
+                <div class="text-center pt-6">
+                    <a href="#contact" class="gradient-btn text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-orange-500/25 inline-flex items-center gap-3">
+                        <i class="fa-solid fa-file-arrow-down text-lg"></i> Download Full Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-6 sm:p-12 border border-orange-200/80 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Info Column -->
+                    <div class="space-y-6">
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight font-heading">
+                            Let's <span class="gradient-text">Connect</span>
+                        </h2>
+                        <p class="text-gray-600 text-base leading-relaxed">
+                            Please fill out the form or reach out directly. I am open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                        </p>
+
+                        <!-- Contact Details List -->
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white text-[#FD6E0A] flex items-center justify-center text-xl shadow-sm border border-orange-100">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-semibold uppercase">Email Me</p>
+                                    <p class="text-gray-800 font-bold">mary.hardy@example.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white text-[#FD6E0A] flex items-center justify-center text-xl shadow-sm border border-orange-100">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-semibold uppercase">Call Me</p>
+                                    <p class="text-gray-800 font-bold">+1 (555) 234-5678</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white text-[#FD6E0A] flex items-center justify-center text-xl shadow-sm border border-orange-100">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-semibold uppercase">Working Hours</p>
+                                    <p class="text-gray-800 font-bold">Mon - Fri: 9:00 AM - 8:00 PM ET</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="pt-6">
+                            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-3">Follow Me</p>
+                            <div class="flex gap-3">
+                                <a href="#" aria-label="GitHub" class="w-10 h-10 rounded-xl bg-white hover:bg-[#FD6E0A] hover:text-white text-gray-700 flex items-center justify-center transition-all duration-300 shadow-sm border border-orange-100">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                                <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-xl bg-white hover:bg-[#FD6E0A] hover:text-white text-gray-700 flex items-center justify-center transition-all duration-300 shadow-sm border border-orange-100">
+                                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                                </a>
+                                <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-xl bg-white hover:bg-[#FD6E0A] hover:text-white text-gray-700 flex items-center justify-center transition-all duration-300 shadow-sm border border-orange-100">
+                                    <i class="fa-brands fa-x-twitter text-lg"></i>
+                                </a>
+                                <a href="#" aria-label="Dribbble" class="w-10 h-10 rounded-xl bg-white hover:bg-[#FD6E0A] hover:text-white text-gray-700 flex items-center justify-center transition-all duration-300 shadow-sm border border-orange-100">
+                                    <i class="fa-brands fa-dribbble text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form Column -->
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-orange-100 space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900 font-heading">Send Me a Message</h3>
+
+                        <form id="contact-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                            <div>
+                                <label for="name" class="block text-xs font-semibold text-gray-600 mb-1 uppercase">Your Name</label>
+                                <input type="text" id="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FD6E0A] focus:ring-2 focus:ring-orange-200 outline-none transition-all text-sm">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-semibold text-gray-600 mb-1 uppercase">Your Email</label>
+                                <input type="email" id="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FD6E0A] focus:ring-2 focus:ring-orange-200 outline-none transition-all text-sm">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold text-gray-600 mb-1 uppercase">Your Message</label>
+                                <textarea id="message" required rows="4" placeholder="Hi Mary, I'd like to work with you on..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FD6E0A] focus:ring-2 focus:ring-orange-200 outline-none transition-all text-sm resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full gradient-btn text-white py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 cursor-pointer">
+                                <i class="fa-solid fa-paper-plane"></i> Send Message
+                            </button>
+
+                            <p id="form-status" class="hidden text-center text-sm font-semibold text-emerald-600 pt-2"></p>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+            <p class="text-sm">© 2026 <span class="text-white font-semibold">Mary Hardy</span>. All rights reserved.</p>
+            <p class="text-xs text-gray-500">Designed with passion & precision.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact Form Handling
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            status.innerText = "✨ Thank you! Your message has been sent successfully.";
+            status.classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+            setTimeout(() => {
+                status.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
 </body>
 
-</html>
+</html>
