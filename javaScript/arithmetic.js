@@ -3,8 +3,9 @@
 let product1 = 40
 let product2 = 60
 
-let total = product1 + product2
-console.log("Total Proice:", total)
+let totalBalance = product1 + product2
+// console.log("Total Balance:", totalBalance)
+
 
 
 // subtraction
@@ -12,14 +13,16 @@ let mybalance = 1000
 let expance = 554
 
 let remaining = mybalance - expance
-console.log("Remaining Balance:", remaining)
+// console.log("Remaining Balance:", remaining)
+
+
 
 // division
 let flat = 50000
 let member = 3
 
 let singleMember = flat / member
-console.log("Single Member:", singleMember) 
+// console.log("Single Member:", singleMember)
 
 
 
@@ -28,4 +31,21 @@ let bed = 10000
 let quantity = 3
 
 let total_Price = bed * quantity
-console.log("Total Bed Price:", total_Price)
+// console.log("Total Bed Price:", total_Price)
+
+
+
+const productPrice = 1000;
+const discount = 10;
+
+const discountAmount = (productPrice * discount) / 100;
+const finalPrice = productPrice - discountAmount;
+
+// console.log("Discount:", discountAmount);
+console.log("Final Price:", finalPrice);
+
+
+
+
+
+
